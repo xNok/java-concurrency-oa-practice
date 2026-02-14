@@ -54,7 +54,7 @@ public class GlobalHotelPricerApp {
             System.out.println();
             
             System.out.println("=== Regional Tax Rates ===");
-            engine.getRegionalTaxRates().forEach((region, rate) -> 
+            engine.getRegionalTaxRatesForTesting().forEach((region, rate) -> 
                 System.out.println(region + ": " + (rate * 100) + "%")
             );
             

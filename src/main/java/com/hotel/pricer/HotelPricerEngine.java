@@ -85,7 +85,7 @@ public class HotelPricerEngine {
         return "DEFAULT";
     }
 
-    public Map<String, Double> getRegionalTaxRates() {
+    Map<String, Double> getRegionalTaxRatesForTesting() {
         return new HashMap<>(regionalTaxRates);
     }
 }
