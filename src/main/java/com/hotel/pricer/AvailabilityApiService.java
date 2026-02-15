@@ -7,6 +7,19 @@ import java.util.concurrent.TimeUnit;
 public class AvailabilityApiService {
     
     public CompletableFuture<Boolean> checkAvailability(String hotelId, LocalDate checkInDate, LocalDate checkOutDate) {
+        if (hotelId == null || hotelId.trim().isEmpty()) {
+            return CompletableFuture.failedFuture(new IllegalArgumentException("hotelId must not be null or empty"));
+        }
+        if (checkInDate == null) {
+            return CompletableFuture.failedFuture(new IllegalArgumentException("checkInDate must not be null"));
+        }
+        if (checkOutDate == null) {
+            return CompletableFuture.failedFuture(new IllegalArgumentException("checkOutDate must not be null"));
+        }
+        if (!checkInDate.isBefore(checkOutDate)) {
+            return CompletableFuture.failedFuture(new IllegalArgumentException("checkInDate must be before checkOutDate"));
+        }
+        
         return CompletableFuture.supplyAsync(() -> {
             try {
                 TimeUnit.MILLISECONDS.sleep(100);

@@ -58,9 +58,11 @@ public class GlobalHotelPricerApp {
                 System.out.println(region + ": " + (rate * 100) + "%")
             );
             
-        } catch (InterruptedException | ExecutionException e) {
+        } catch (InterruptedException e) {
             System.err.println("Error processing pricing requests: " + e.getMessage());
             Thread.currentThread().interrupt();
+        } catch (ExecutionException e) {
+            System.err.println("Error processing pricing requests: " + e.getMessage());
         }
     }
 }

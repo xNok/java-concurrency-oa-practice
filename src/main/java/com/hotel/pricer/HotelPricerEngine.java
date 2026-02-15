@@ -33,6 +33,10 @@ public class HotelPricerEngine {
     }
 
     public CompletableFuture<HotelPricingResponse> getPricing(HotelPricingRequest request) {
+        if (request == null) {
+            return CompletableFuture.failedFuture(new IllegalArgumentException("HotelPricingRequest must not be null"));
+        }
+        
         CompletableFuture<Double> priceFuture = priceApiService.fetchBasePrice(
                 request.getHotelId(),
                 request.getCheckInDate(),
@@ -79,10 +83,13 @@ public class HotelPricerEngine {
     }
 
     private String extractRegionFromHotelId(String hotelId) {
-        if (hotelId.length() >= 2) {
-            return hotelId.substring(0, 2).toUpperCase();
+        if (hotelId == null || hotelId.length() < 2) {
+            return "DEFAULT";
         }
-        return "DEFAULT";
+        
+        String regionCode = hotelId.substring(0, 2).toUpperCase();
+        // Return the region code if configured, otherwise will fall back to DEFAULT via getOrDefault
+        return regionCode;
     }
 
     Map<String, Double> getRegionalTaxRatesForTesting() {
