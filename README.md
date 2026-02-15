@@ -2,6 +2,20 @@
 
 A Java-based practice project demonstrating concurrent programming concepts through a hotel pricing engine.
 
+> **📚 For Students:**
+> - 📝 [ASSIGNMENT.md](ASSIGNMENT.md) - Complete task description, requirements, and implementation guide
+> - 🎓 [LESSONS.md](LESSONS.md) - Key lessons, best practices, and real-world applications
+> - 💻 This README - Reference implementation and quick start guide
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [Architecture](#architecture)
+- [Testing](#testing)
+- [License](#license)
+
 ## Overview
 
 The Global Hotel Pricer is a demonstration of parallel API calls and concurrent processing in Java. It simulates fetching hotel pricing data by making parallel calls to mock external services.
@@ -48,6 +62,8 @@ Output:
 | DEFAULT| 5%       |
 
 ## Building the Project
+
+## Quick Start
 
 ### Prerequisites
 
