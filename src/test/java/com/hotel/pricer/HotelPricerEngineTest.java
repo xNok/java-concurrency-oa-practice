@@ -100,8 +100,8 @@ public class HotelPricerEngineTest {
         for (int i = 0; i < 50; i++) {
             HotelPricingRequest request = new HotelPricingRequest(
                     "TEST" + i,
-                    LocalDate.of(2026, 6, i % 28 + 1),
-                    LocalDate.of(2026, 6, (i % 28 + 1) + 1),
+                    LocalDate.of(2026, 6, i % 27 + 1),
+                    LocalDate.of(2026, 6, (i % 27 + 1) + 1),
                     "USD"
             );
 

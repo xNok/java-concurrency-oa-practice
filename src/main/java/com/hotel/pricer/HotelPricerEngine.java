@@ -87,9 +87,7 @@ public class HotelPricerEngine {
             return "DEFAULT";
         }
         
-        String regionCode = hotelId.substring(0, 2).toUpperCase();
-        // Return the region code if configured, otherwise will fall back to DEFAULT via getOrDefault
-        return regionCode;
+        return hotelId.substring(0, 2).toUpperCase();
     }
 
     Map<String, Double> getRegionalTaxRatesForTesting() {
